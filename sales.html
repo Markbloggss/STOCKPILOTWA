@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>STOCK PILOT</title>
   <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/svg+xml" href="favicon.ico">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <meta name="apple-mobile-web-app-title" content="STOCK PILOT">
@@ -14,34 +13,27 @@
 </head>
 <body>
   <header class="site-header">
-    <a href="home.html" class="logo-btn" aria-label="Home">
-      <img src="stock-pilot-logo.png" alt="Stock Pilot logo">
-    </a>
-
-    <nav class="icons">
-  <a href="sales.html" class="icon-btn" aria-label="Sales" title="Sales">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 17l6-6 4 4 8-8"/>
-      <path d="M15 7h6v6"/>
-    </svg>
-  </a>
-  <a href="inventory.html" class="icon-btn" aria-label="Inventory" title="Inventory">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 8l-9-5-9 5v8l9 5 9-5z"/>
-      <path d="M3 8l9 5 9-5"/>
-      <path d="M12 13v8"/>
-    </svg>
-  </a>
-  <a href="settings.html" class="icon-btn" aria-label="Settings" title="Settings">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="3"/>
-      <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>
-    </svg>
-  </a>
-</nav>
-  </header>
-  <div>
-    
+  <nav class="navbar navbar-translucent md:navbar-expand" data-bs-theme="dark">
+  <div class="container-fluid justify-content-center">
+    <a class="navbar-brand" href="#">Inventory Page</a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="inventory.html">Inventory</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sales.html">Sales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Settings</a>
+      </li>
+    </ul>
+    <form class="d-flex ms-3" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light" type="submit">Search</button>
+    </form>
   </div>
 </body>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
