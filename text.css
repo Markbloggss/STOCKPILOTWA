@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #0b1a3a;
+}
+
+.logo-btn img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.icon-btn {
+  display: flex;
+  color: #f2b640;
+  text-decoration: none;
+}
+
+.icon-btn svg {
+  width: 26px;
+  height: 26px;
+}
+
+.icon-btn:hover {
+  color: #ffffff;
+}
