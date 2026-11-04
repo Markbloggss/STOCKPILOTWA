@@ -1,42 +1,92 @@
-* {
-    box-sizing: border-box;
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --form-bg: white;
+    --input-bg: white;
+    --input-border: #ccc;
+    --input-focus: blue;
+    --label-color: black;
+    --h2-color: grey;
+    --h2-border: #ddd;
+    --muted-text: grey;
+    --danger-color: red;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --form-bg: #2d2d2d;
+    --input-bg: #3a3a3a;
+    --input-border: #555;
+    --input-focus: #4a90e2;
+    --label-color: #e0e0e0;
+    --h2-color: #b0b0b0;
+    --h2-border: #444;
+    --muted-text: #999;
+    --danger-color: #ff4444;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+.nav-bar {
+    max-width: 520px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+}
+
+.back-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--input-border);
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    background-color: var(--form-bg);
+    opacity: 1;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: white;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--bg-color);
     margin: 0;
-    padding: 20px;
-    color: black;
-    line-height: 1.5;
+    padding: 24px;
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 h1 {
     text-align: center;
-    color: black;
-    margin-bottom: 10px;
+    color: var(--text-color);
+    margin-bottom: 6px;
+    font-size: 26px;
 }
 
 p {
     text-align: center;
-    color:grey;
-    margin-bottom: 30px;
+    color: var(--muted-text);
+    margin-bottom: 24px;
 }
 
 h2 {
-    color:grey;
-    border-bottom: 1px solid #ddd;
+    color: var(--h2-color);
+    border-bottom: 1px solid var(--h2-border);
     padding-bottom: 8px;
-    margin-top: 30px;
+    margin-top: 24px;
+    font-size: 18px;
 }
 
 form {
-    background-color: white;
-    max-width: 500px;
-    margin: 0 auto 30px;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--form-bg);
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: background-color 0.3s;
 }
 
 label {
@@ -45,6 +95,7 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 14px;
+    color: var(--label-color);
 }
 
 label.inline {
@@ -52,19 +103,22 @@ label.inline {
     margin-left: 8px;
     font-weight: normal;
     cursor: pointer;
+    color: var(--text-color);
 }
 
 input, select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border);
     border-radius: 5px;
     font-size: 14px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
 }
 
 input:focus, select:focus {
     outline: none;
-    border-color:blue;
+    border-color: var(--input-focus);
 }
 
 input[type="checkbox"],
@@ -103,19 +157,72 @@ button:active {
 }
 
 button.danger {
-    background-color: red;
+    background-color: var(--danger-color);
 }
 
 button.danger:hover {
-    background-color:red;
+    background-color: var(--danger-color);
 }
 
-.privacy-actions {
-    max-width: 500px;
+.security-actions {
+    max-width: 520px;
     margin: 0 auto;
     display: flex;
     gap: 10px;
-    justify-content: flex-end;
+    justify-content: center;
+}
+
+.about-info {
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-info p {
+    text-align: center;
+    margin: 4px 0;
+}
+
+.about-info button {
+    margin-top: 10px;
+}
+
+.theme-label {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--label-color);
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-slider {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: background-color 0.3s;
+}
+
+.theme-switch input:checked + .theme-slider {
+    background-color: blue;
+}
+
+.theme-text {
+    font-size: 12px;
 }
 
 @media (max-width: 600px) {
