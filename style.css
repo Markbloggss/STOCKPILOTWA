@@ -11,6 +11,10 @@
   max-height: 100vh;
   overflow: hidden; 
 }
+.home-icon{
+  margin-right: auto;
+}
+
 
 .buttons {
   background: rgba(255, 255, 255, 0.06);
