@@ -41,3 +41,17 @@ body {
 .icon-btn:hover {
   color: #ffffff;
 }
+
+footer {
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  background: rgba(0, 0, 0, 0.04);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+footer p {
+  margin: 0;
+}
