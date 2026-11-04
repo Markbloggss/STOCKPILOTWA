@@ -11,6 +11,10 @@
   max-height: 100vh;
   overflow: hidden; 
 }
+.home-icon{
+  margin-right: auto;
+}
+
 
 .buttons {
   background: rgba(255, 255, 255, 0.06);
@@ -90,5 +94,24 @@
   transform:scale(1.2);          
   box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
 
+}
+
+.footer{
+  font-size: larger;
+  font-style: italic;
+  font-weight: 500;
+  color: aliceblue;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px ;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
