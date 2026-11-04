@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STOCK PILOT</title>
+
+<style>
+/* 1. GLOBAL SETTINGS */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+:root {
+--background: #080d18;
+--panel: rgba(10, 15, 29, 0.88);
+--border: rgba(180, 190, 220, 0.18);
+--purple: #d000ff;
+--purple-light: #ef8cff;
+--text: #f5f5fa;
+--muted: #9aa2b5;
+}
+
+body {
+min-height: 100vh;
+font-family: Arial, Helvetica, sans-serif;
+color: var(--text);
+background:
+radial-gradient(ellipse at 25% 45%, rgba(105, 0, 130, 0.22), transparent 42%),
+linear-gradient(135deg, #101a2a, var(--background) 65%);
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 28px;
+overflow-x: hidden;
+}
+
+/* 2. MAIN TWO-COLUMN LAYOUT */
+.page {
+width: min(1150px, 100%);
+}
+
+.heading {
+text-align: center;
+margin-bottom: 34px;
+font-size: clamp(2rem, 5vw, 4rem);
+letter-spacing: -2px;
+}
+
+.heading span {
+color: #ffbd78;
+}
+
+.showcase {
+min-height: 570px;
+display: flex;
+align-items: centre;
+justify_content: centre;
+width: 100%;
+grid-template-columns: 1.1fr 0.9fr;
+border: 1px solid rgba(255,255,255,0.2);
+border-radius: 24px;
+overflow: hidden;
+background: rgba(4, 8, 17, 0.58);
+box-shadow: 0 25px 80px rgba(0,0,0,0.45);
+}
+
+
+/* 4. LOGIN CARD */
+.form-side {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+padding: 38px;
+background: linear-gradient(145deg, rgba(15,20,34,0.8), rgba(5,9,17,0.95));
+}
+
+.login-card {
+width: min(390px, 100%);
+margin: auto;
+padding: 30px;
+border: 1px solid var(--border);
+border-radius: 20px;
+background: var(--panel);
+box-shadow: 0 15px 45px rgba(0,0,0,0.35), 0 0 35px rgba(183,0,255,0.08);
+backdrop-filter: blur(14px);
+}
+
+.tabs {
+display: grid;
+grid-template-columns: 1fr 1fr;
+padding: 4px;
+border-radius: 12px;
+background: #080c16;
+margin-bottom: 25px;
+}
+
+.tab {
+border: 0;
+border-radius: 9px;
+padding: 11px 8px;
+color: var(--muted);
+background: transparent;
+cursor: pointer;
+font-weight: 600;
+transition: 0.25s;
+}
+
+.tab.active {
+color: white;
+background: #252a38;
+box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.card-heading {
+text-align: center;
+font-size: 25px;
+margin-bottom: 7px;
+}
+
+.subtitle {
+color: var(--muted);
+text-align: center;
+font-size: 12px;
+margin-bottom: 24px;
+}
+
+.field {
+margin-bottom: 13px;
+}
+
+.field label {
+display: block;
+color: #c4c9d5;
+font-size: 12px;
+margin-bottom: 7px;
+}
+
+.field input {
+width: 100%;
+padding: 14px 13px;
+border: 1px solid #293044;
+border-radius: 10px;
+outline: none;
+background: #090e19;
+color: white;
+font-size: 14px;
+transition: border 0.2s, box-shadow 0.2s;
+}
+
+.field input:focus {
+border-color: var(--purple);
+box-shadow: 0 0 0 3px rgba(208,0,255,0.12);
+}
+
+.password-wrap {
+position: relative;
+}
+
+.password-wrap input {
+padding-right: 54px;
+}
+
+.show-password {
+position: absolute;
+top: 50%;
+right: 12px;
+transform: translateY(-50%);
+border: 0;
+color: #c5cada;
+background: transparent;
+cursor: pointer;
+font-size: 12px;
+}
+
+.form-options {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 10px;
+margin: 15px 0 20px;
+color: var(--muted);
+font-size: 11px;
+}
+
+.remember {
+display: flex;
+align-items: center;
+gap: 7px;
+}
+
+.remember input {
+accent-color: var(--purple);
+}
+
+a {
+color: #e34aff;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+.primary-button {
+width: 100%;
+padding: 14px;
+border: 0;
+border-radius: 10px;
+color: #17051c;
+background: linear-gradient(90deg, #c500ed, #e22cff);
+font-weight: 800;
+cursor: pointer;
+box-shadow: 0 8px 22px rgba(208,0,255,0.2);
+transition: transform 0.2s, filter 0.2s;
+}
+
+.primary-button:hover {
+transform: translateY(-2px);
+filter: brightness(1.12);
+}
+
+.message {
+min-height: 18px;
+width:100%;
+max-width: 100%;
+margin-top: 14px;
+text-align: center;
+color: #d8a2ff;
+font-size: 12px;
+line-height: 1.5;
+white-space; normal;
+overflow-wrap: anywhere;
+}
+
+.hidden {
+display: none;
+}
+
+/* 5. SMALL-SCREEN / PHONE LAYOUT */
+@media (max-width: 800px) {
+body { padding: 18px; }
+.heading { letter-spacing: -1px; margin-bottom: 22px; }
+.showcase { grid-template-columns: 1fr; }
+.lamp-room { min-height: 390px; }
+.lamp { transform: scale(0.82); }
+.form-side { padding: 24px 16px; }
+.login-card { padding: 24px; }
+}
+
+@media (max-width: 380px) {
+.login-card { padding: 19px; }
+.lamp-room { min-height: 350px; }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+<h1 class="heading">STOCK PILOT</h1>
+
+<section class="showcase">
+
+
+<!-- RIGHT SIDE: LOGIN / CREATE ACCOUNT -->
+<div class="form-side">
+<div class="login-card">
+<div class="tabs">
+<button class="tab" id="signInTab" type="button">Sign In</button>
+<button class="tab active" id="createTab" type="button">Create Account</button>
+</div>
+
+<h2 class="card-heading" id="formHeading">Create Account</h2>
+<p class="subtitle" id="formSubtitle">Join us and start your journey today.</p>
+
+<form id="accountForm">
+<div class="field" id="nameField">
+<label for="fullName">Full name</label>
+<input id="fullName" name="fullName" type="text"
+placeholder="e.g. Barungi Arthur" autocomplete="name">
+</div>
+
+<div class="field">
+<label for="email">Email address</label>
+<input id="email" name="email" type="email"
+placeholder="you@example.com" autocomplete="email" required>
+</div>
+
+<div class="field">
+<label for="password">Password</label>
+<div class="password-wrap">
+<input id="password" name="password" type="password"
+placeholder="enter atleast 4 characters"
+autocomplete="current-password" minlength="4" required>
+<button class="show-password" id="togglePassword"
+type="button" aria-label="Show password">SHOW</button>
+</div>
+</div>
+
+
+
+<button class="primary-button" id="submitButton" type="submit">
+Create account ’
+</button>
+</form>
+
+
+<p class="message" id="message" role="status" aria-live="polite"></p>
+</div>
+</div>
+</section>
+</main>
+
+<script>
+// 1. GET THE HTML ELEMENTS THAT JAVASCRIPT WILL CONTROL.
+const signInTab = document.getElementById("signInTab");
+const createTab = document.getElementById("createTab");
+const formHeading = document.getElementById("formHeading");
+const formSubtitle = document.getElementById("formSubtitle");
+const nameField = document.getElementById("nameField");
+const fullName = document.getElementById("fullName");
+const password = document.getElementById("password");
+const togglePassword = document.getElementById("togglePassword");
+const submitButton = document.getElementById("submitButton");
+const accountForm = document.getElementById("accountForm");
+const message = document.getElementById("message");
+
+// This variable remembers which form is currently visible.
+let currentMode = "create";
+
+// 3. CHANGE BETWEEN SIGN-IN AND CREATE-ACCOUNT MODES.
+function setMode(mode) {
+currentMode = mode;
+message.textContent = "";
+
+if (mode === "signin") {
+formHeading.textContent = "Welcome Back";
+formSubtitle.textContent = "Sign in to continue your journey.";
+nameField.classList.add("hidden");
+fullName.required = false;
+password.autocomplete = "current-password";
+submitButton.textContent = "Sign In ";
+signInTab.classList.add("active");
+createTab.classList.remove("active");
+} else {
+formHeading.textContent = "Create Account";
+formSubtitle.textContent = "Join us and start your journey today.";
+nameField.classList.remove("hidden");
+fullName.required = true;
+password.autocomplete = "new-password";
+submitButton.textContent = "Create Account ";
+createTab.classList.add("active");
+signInTab.classList.remove("active");
+}
+}
+
+signInTab.addEventListener("click", function () {
+setMode("signin");
+});
+
+createTab.addEventListener("click", function () {
+setMode("create");
+});
+
+// 4. SHOW OR HIDE THE PASSWORD.
+togglePassword.addEventListener("click", function () {
+if (password.type === "password") {
+password.type = "text";
+togglePassword.textContent = "HIDE";
+togglePassword.setAttribute("aria-label", "Hide password");
+} else {
+password.type = "password";
+togglePassword.textContent = "SHOW";
+togglePassword.setAttribute("aria-label", "Show password");
+}
+});
+
+// 5. HANDLE FORM SUBMISSION.
+accountForm.addEventListener("submit", function (event) {
+// Stop the browser from refreshing the page.
+event.preventDefault();
+
+const email = document.getElementById("email").value.trim();
+const passwordValue = password.value;
+const name = fullName.value.trim();
+
+if (currentMode === "create" && name.length < 2) {
+message.textContent = "Please enter your full name.";
+fullName.focus();
+return;
+}
+
+if (passwordValue.length < 4) {
+message.textContent = "Your password must have at least 8 characters.";
+password.focus();
+return;
+}
+
+// This is a front-end demonstration only.
+// A real website must send details securely to a server.
+if (currentMode === "create") {
+message.textContent =
+"Demo complete: the form is valid. Connect a secure backend to create an account.";
+} else {
+message.textContent =
+"Demo complete: the form is valid. Connect an authentication service to sign in.";
+}
+
+console.log("Form mode:", currentMode);
+console.log("Email entered:", email);
+
+
+// Do not print or store the password in the console.
+});
+
+
+
+// Start the page in Create Account mode.
+setMode("create");
+</script>
+</body>
+</html>

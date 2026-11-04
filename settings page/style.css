@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 20px;
+    color: black;
+    line-height: 1.5;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    color:grey;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color:grey;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    margin-top: 30px;
+}
+
+form {
+    background-color: white;
+    max-width: 500px;
+    margin: 0 auto 30px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+label.inline {
+    display: inline-block;
+    margin-left: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color:blue;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: 6px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[type="reset"] {
+    background-color: grey;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    opacity: 1;
+}
+
+button.danger {
+    background-color: red;
+}
+
+button.danger:hover {
+    background-color:red;
+}
+
+.privacy-actions {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    form {
+        padding: 18px;
+    }
+
+    .form-actions,
+    .privacy-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button,
+    .privacy-actions button {
+        width: 100%;
+    }
+}
