@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SALES</title>
-  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/svg+xml" href="favicon.ico"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <title>SALES</title>
+    <style>
+        html, body {
+            min-height: 100vh;
+        }
+        body {
+            background-image: url('assets/background%20image.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <meta name="apple-mobile-web-app-title" content="STOCK PILOT">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="text.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-image: url('background image.webp'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
- <nav class="navbar navbar-translucent md:navbar-expand" data-bs-theme="dark">
+<body>
+
+    <!-- Navigation Bar -->
+   <nav class="navbar navbar-translucent md:navbar-expand" data-bs-theme="dark">
   <div class="container-fluid justify-content-center">
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -37,164 +52,43 @@
   </div>
 </nav>
 
-<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
-<style>
-/* ---------- Coming soon ---------- */
-  main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
-  h1 { font-size: clamp(4rem, 15vw, 11rem); line-height: 0.95; letter-spacing: -0.05em; font-weight: 700; margin: 0 0 1.5rem; }
-  p { font-size: clamp(1.1rem, 2vw, 1.5rem); max-width: 34rem; opacity: 0.85; margin: 0 0 2.5rem; }
-  .btn { background-color: #f8e7c9; color: #163a2c; padding: 1rem 2.4rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 1.15rem; border: 2px solid #f8e7c9; }
-  .btn:hover { background-color: transparent; color: #f8e7c9; }
-  a:focus-visible { outline: 3px solid #7A9A80; outline-offset: 3px; }
-  </style>
-  <main>
-  <h1 style="color:black" >No sales yet.</h1>
-  <p style="color:black" > All your sales will appear here.</p>
-  <a href="contact.html" class="btn">Contact us</a>
-</main>
-</body>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<hr>
-<footer>
-  
-  <style>
-       body
-       {
-        margin: 2;
-        font-family: sans-serif;
-        background-color:darkslateblue;
-        color:goldenrod;
-        padding: 40px;
-       }
-       .footer_container
-       {
-        display:flex;
-        flex-direction: row;
-        justify-content: space_between;/*spreads columns evenly across the page*/
-        color:#100b50;/*Limit total width so it doesnt stretch too far*/
-        max-width: 1000px;/*centres the entire footer on the screen*/
-        margin:0 auto;
-        padding: 35px 5%;
-        gap: 20px;
-        align-items:flex-start;
-
-       }
-
-       .footer_column
-       {
-        display:flex;
-        flex-direction: column;/*Stacks elements straight down*/
-        gap:6px; /*creates equal spacing between items*/
-        align-items: flex-start;
-        flex:1;
-       }
-
-       .footer_column h3
-       {
-        font-size:14px ;
-        letter-spacing: 1px;
-        margin:0 0 8px 0;
-        font-size: 16px;
-        color: aliceblue;
-        margin: 0 0 5px 0;
-       }
-
-       .footer_column a
-       {
-        color: #d7d3e8;
-        text-decoration: none;
-        font-size: 15px;
-        display: block;
-        text-align: left;
-       }
-
-       .footer_column a:hover{
-        text-decoration: underline;
-        color: #d7d3e8;
-       }
-       .footer_column ul{list-style: none;}
-       .footer_column li{margin-bottom: 10px;}
-       .subscribe{
-        display:flex;
-        flex-direction:column;
-        gap:10px;
-        min-width: 3px;
-       }
-
-        .footer_bottom{
-          display:flex;
-          justify-content: space-between;
-          border-top: 1px solid #39336e;
-          padding-top: 20px;
-          font-size: 11px;
-          color: #c5c1d9;
-        }
-          .footer_bottom a{
-            color:#c5c1d9;
-            text-decoration: none;
-            margin-left:12px;
-          }
-        
-       
-        
-        .socials svg:hover{
-          color: pink;
-          transition: color 0.3s ease;
-          transform: scale(1.5);
-        }
-          .logo{
-            text-align: center;
-            font-size: 22px;
-            font-weight: bolder;
-            justify-content: center;
-          }
-
-          .logo-img{
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-            align-items: left;
-          }
-
-          .subscribe{
-            display:flex;
-            flex-direction: column;
-            gap: 10px;
-            min-width:180px ;
-          }
-          .subscribe input{
-            padding: 10px;
-            background:transparent;
-            border:1px solid#aaa;
-            color: white;
-            border-radius: 3px;
-
-          }
-          .subscribe button{
-            padding: 10px;
-            background-color: #d7d3e8;
-            color:#100b50;
-            border: none;
-            cursor: pointer;
-            border-radius: 3px;
-          }
-
-          .socials a{
-            color: white;
-            text-decoration: none;
-            margin-right: 10px;
-          }
-
-    </style>
-    <body>
+    <!----main image And intro text-->
+    <section id ="intro">
+        <div class="container-lg">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-5 text-center text-md-start">
+<br><br>
+                    
+                        <div class="display-5 text-muted"><h1>NO CURRENT SALES </h1></div>
+                    </h1>
+                    <p class="lead my-4 text-muted">All the your sales will appear here.</p>
+                                        <a href="homepage.html" class="btn btn-secondary btn-lg">Get Started</a>
+                </div> 
+            </div>
+        </div>
+    </section>
 
 
-        <!--Main parent container-->
-        <div class="footer_container">
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    
-          
-            <div class="logo" >
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+
+<footer class="footer">
+<div class="logo" >
               <img src="favicon.ico" class="logo-img" alt="Logo">STOCKPILOT</div>
 
             <div class="socials">
@@ -225,55 +119,41 @@
 </svg>
                 <i class="fa-brands fa-youtube"></i></a>
             </div>
-          
-<!--column one-->
-<div class="footer_column">
-    <h3 >RESOURCES</h3>
-    <a href="#" >Applications</a>
-    <a href="#">FAQ</a>
-</div>
 
-<!--column 2-->
-<div class="footer_column">
-  <h3>PRICING</h3>
-  <ul>
-  <li><a href="#">Overview</a></li>
-  <li><a href="#">Promotions</a></li>
-  <li><a href="#">Packages</a></li>
-  </ul>
+
+    <div class="footer-column">
+      <h2 class="info-heading" data-info="About Us: Stock Pilot is a leading platform for stock market analysis and trading tools. We help investors make informed decisions with real-time data and insights.">About Us</h2>
+      <a href="#">Blog</a>
+      <a href="#">Customers</a>
+      <a href="#">Terms of service</a>
+      <a href="#">Demo</a>
+    </div>
+    <div class="footer-column">
+      <h2 class="info-heading" data-info="Contact Us: Get in touch with our support team. Email: support@stockpilot.com | Phone: 1-800-STOCK | Hours: Mon-Fri 9AM-5PM EST">Contact Us</h2>
+      <a href="#">Jobs</a>
+      <a href="#">Support</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-column">
+      <h2 class="info-heading" data-info="Social Media: Follow us for daily market updates and trading tips. @StockPilot on Twitter, Instagram, and YouTube">Social Media</h2>
+      <a href="#">Instagram</a>
+      <a href="#">Youtube</a>
+      <a href="#">Twitter</a>
+    </div>
+    <div class="footer-email-form">
+      <h2 class="info-heading" data-info="Join Our Newsletter: Get weekly stock picks, market analysis, and exclusive insights delivered to your inbox. Subscribe now for free!">Join Our Newsletter</h2>
+      <form>
+        <input type="email" placeholder="Enter your email address" id="footer-email">
+        <input type="submit" value="Sign up" id="footer-email-btn">
+      </form>
+    </div>
+  </footer>
+
+  <div id="info-modal" class="info-modal">
+    <div class="info-modal-content">
+      <span class="info-modal-close">&times;</span>
+      <p id="info-modal-text"></p>
+    </div>
   </div>
-  
-  <!--Column 3-->
-  <div class="footer_column">
-   
-    <h3>COMPANY</h3>
-     <ul>
-    <li><a href="#">About us</a></li>
-    <li><a href="#">Paternerships</a></li>
-    <li><a href="#">Careers</a></li>
-    <li><a href="#">Future prospects</a></li>
-    </ul>
-  </div>
-
-
-         
-          <form class="subscribe" onsubmit="return false;">
-            <strong>Subscribe</strong>
-            <input type="email"placeholder="Enter your email">
-            <button type="submit">Subscribe</button>
-          </form>
-          </div>
-
-          <div class="Footer_bottom">
-            <p>Copyright 2026 All rights reserved.</p>
-
-            <div>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-
-            </div>
-        </div>
-
-  </p>
-</footer>
+  </body>
 </html>
