@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <title>Inventory Forms</title>
     <style>
         html, body {
@@ -47,38 +48,94 @@
 </nav>
 
     <!----main image And intro text-->
-    <section id ="intro">
+    <section id ="intro" class="py-4">
         <div class="container-lg">
             <div class="row justify-content-center align-items-center">
-                <div class="col-md-5 text-center text-md-start">
-                    <h1 class="display-4">Welcome to Our Inventory Forms Page
-                        <div class="display-2">Here you can view our available products.</div>
-                    </h1>
-                    <p class="lead my-4 text-muted">Keep track of your inventory in real-time and never run out of stock again.</p>
-                    <p class="lead">Manage your inventory items with ease.</p>
+                <div class="col-md-6 text-center text-md-start">
+                    <h1 class="display-4">Inventory Forms</h1>
+                    <p class="lead my-3 text-muted">Add and manage your inventory items.</p>
                 </div> 
             </div>
         </div>
     </section>
 
-    <!--products-->
-    <section id="products" class="bg-light mt-5 py-5">
+    <!-- Inventory Form -->
+    <section id="inventory-form" class="py-5">
         <div class="container-lg">
             <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <h2 class="display-4">Our Products</h2>
-                    <p class="lead my-4 text-muted">Browse our wide range of products and find what you need.</p>
-                </div>
-            </div>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Product cards will go here -->
-            </div>
+                <div class="col-md-10 col-lg-7">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h3 class="mb-0"><i class="bi bi-plus-circle me-2"></i>Add Inventory Item</h3>
+                            <p class="mb-0 opacity-75">Fill in the details below to add a new item to your inventory.</p>
+                        </div>
+                        <div class="card-body p-4">
+                            <form id="inventoryForm" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="sku" class="form-label">SKU <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="sku" name="sku" required placeholder="e.g., SKU-001" autocomplete="off">
+                                        <div class="form-text">Unique identifier for this item</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="category" class="form-label">Category</label>
+                                        <input type="text" class="form-control" id="category" name="category" placeholder="e.g., Electronics" autocomplete="off">
+                                    </div>
+                                </div>
 
-            <div class="row my-5 align-items-center justify-content-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <h3 class="display-5">Need Help?</h3>
-                    <p class="lead my-4 text-muted">If you have any questions or need assistance, feel free to reach out to our support team.</p>
-                    <a href="sales.html" class="btn btn-primary btn-lg">Contact Sales</a>
+                                <div class="row g-3 mt-3">
+                                    <div class="col-12">
+                                        <label for="name" class="form-label">Product Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="name" name="name" required placeholder="e.g., Wireless Mouse" autocomplete="off">
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mt-3">
+                                    <div class="col-md-4">
+                                        <label for="stock" class="form-label">Current Stock <span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" id="stock" name="stock" required min="0" value="0">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="minLevel" class="form-label">Min Stock Level <span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" id="minLevel" name="minLevel" required min="0" value="10">
+                                        <div class="form-text">Alert when stock falls below this</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="price" class="form-label">Unit Price ($) <span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" id="price" name="price" required min="0" step="0.01" value="0.00">
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mt-3">
+                                    <div class="col-md-6">
+                                        <label for="unit" class="form-label">Unit of Measure</label>
+                                        <select class="form-select" id="unit" name="unit">
+                                            <option value="pcs" selected>Pieces (pcs)</option>
+                                            <option value="kg">Kilograms (kg)</option>
+                                            <option value="m">Meters (m)</option>
+                                            <option value="ltr">Liters (ltr)</option>
+                                            <option value="box">Box</option>
+                                            <option value="pack">Pack</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="location" class="form-label">Storage Location</label>
+                                        <input type="text" class="form-control" id="location" name="location" placeholder="e.g., Warehouse A - Shelf 3" autocomplete="off">
+                                    </div>
+                                </div>
+
+                                <div class="mt-3">
+                                    <label for="description" class="form-label">Description</label>
+                                    <textarea class="form-control" id="description" name="description" rows="3" placeholder="Optional details about this item..."></textarea>
+                                </div>
+
+                                <div class="d-flex gap-2 mt-4 pt-3 border-top">
+                                    <button type="submit" class="btn btn-primary btn-lg px-4">Save Item</button>
+                                    <a href="inventory.html" class="btn btn-outline-secondary btn-lg px-4">Cancel</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
