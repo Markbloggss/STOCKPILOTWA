@@ -30,7 +30,7 @@
 
 .footer::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -40,7 +40,7 @@
 }
 
 .footer > * {
-    position: absolute;
+    position: fixed;
     z-index: 1;
 }
 
