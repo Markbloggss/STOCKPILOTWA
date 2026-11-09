@@ -1,0 +1,50 @@
+
+body{
+    background-image: url("background image.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+footer{
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    margin: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(225, 255, 225, 0.12);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.socials a{
+    text-decoration: none;
+}
+    
+.socials svg{
+    text-decoration: none;
+    color: aqua;
+}
+
+.col h3{
+    font-weight: bold;
+    color: gold;
+}
+
+.col p{
+    font-style: italic;
+    color: darkblue;
+}
+.socials svg:hover{
+    color: blue;
+    transition: ease-in 0.25s;
+    transform: scale(1.2);
+}
+
+.info{
+    font-style: italic;
+    color: black;
+    text-align: center;
+}
