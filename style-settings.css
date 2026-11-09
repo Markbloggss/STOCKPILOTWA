@@ -61,7 +61,7 @@ body {
 h1 {
     text-align: center;
     color: var(--text-color);
-    margin-bottom: 6px;
+    margin-bottom: 6px; 
     font-size: 26px;
 }
 
@@ -244,3 +244,4 @@ button.danger:hover {
         width: 100%;
     }
 }
+
