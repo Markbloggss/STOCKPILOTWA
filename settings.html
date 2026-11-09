@@ -212,13 +212,42 @@
         const toggle = document.getElementById('theme-toggle');
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
-        toggle.checked = savedTheme === 'dark';
+        if (toggle) {
+            toggle.checked = savedTheme === 'dark';
+        }
 
-        toggle.addEventListener('change', () => {
-            const theme = toggle.checked ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-        });
+        if (toggle) {
+            toggle.addEventListener('change', () => {
+                const theme = toggle.checked ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+            });
+        }
+
+        const accountForm = document.getElementById('account-form');
+        if (accountForm) {
+            const savedUser = localStorage.getItem('sp_username');
+            const savedEmail = localStorage.getItem('sp_email');
+            const savedLang = localStorage.getItem('sp_language');
+            const savedNotif = localStorage.getItem('sp_notifications');
+            if (savedUser) document.getElementById('username').value = savedUser;
+            if (savedEmail) document.getElementById('email').value = savedEmail;
+            if (savedLang) document.getElementById('language').value = savedLang;
+            if (savedNotif === 'true') document.getElementById('notifications').checked = true;
+
+            accountForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                localStorage.setItem('sp_username', document.getElementById('username').value);
+                localStorage.setItem('sp_email', document.getElementById('email').value);
+                localStorage.setItem('sp_language', document.getElementById('language').value);
+                localStorage.setItem('sp_notifications', document.getElementById('notifications').checked);
+                const pw = document.getElementById('password').value;
+                if (pw) {
+                    localStorage.setItem('sp_password_set', 'true');
+                }
+                alert('Settings saved successfully!');
+            });
+        }
     </script>
 </body>
 </html>
