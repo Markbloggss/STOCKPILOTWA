@@ -139,10 +139,46 @@ body > footer.footer {
 .navbar-translucent {
   width: 100%;
   align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
   background: var(--nav-bg) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--nav-border);
+}
+
+.navbar-translucent .logo-show {
+  width: auto;
+  flex: 0 0 auto;
+  padding: 0.25rem 0;
+}
+
+.navbar-translucent .container-fluid {
+  width: auto;
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 0;
+}
+
+.navbar-translucent .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0;
+}
+
+.navbar-translucent .nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  font-size: 1.25rem;
+  line-height: 1;
 }
 
 .footer-column {
