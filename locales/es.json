@@ -1,0 +1,45 @@
+{
+  "settings": {
+    "title": "Configuración",
+    "subtitle": "Administre la configuración de su cuenta a continuación.",
+    "account": {
+      "title": "Configuración de Cuenta Stock Pilot",
+      "username": "Nombre de usuario",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "usernamePlaceholder": "Ingrese nombre de usuario",
+      "emailPlaceholder": "Ingrese correo electrónico",
+      "passwordPlaceholder": "Ingrese contraseña"
+    },
+    "preferences": {
+      "title": "Preferencias",
+      "language": "Idioma",
+      "notifications": "Habilitar notificaciones",
+      "theme": "Tema",
+      "darkMode": "Modo oscuro"
+    },
+    "privacy": {
+      "title": "Privacidad",
+      "changePassword": "Cambiar Contraseña",
+      "deleteAccount": "Eliminar Cuenta",
+      "deleteConfirm": "¿Está seguro?"
+    },
+    "security": {
+      "title": "Seguridad",
+      "twoFactor": "Autenticación de Dos Factores",
+      "activeSessions": "Sesiones Activas"
+    },
+    "buttons": {
+      "save": "Guardar Cambios",
+      "cancel": "Cancelar"
+    },
+    "alerts": {
+      "saved": "¡Configuración guardada exitosamente!"
+    }
+  },
+  "nav": {
+    "home": "Inicio",
+    "inventory": "Inventario",
+    "sales": "Ventas"
+  }
+}
