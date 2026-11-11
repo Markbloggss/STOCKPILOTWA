@@ -16,8 +16,14 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            padding-bottom: 120px; /* Space for footer */
         }
-    </style>
+        .form-label { font-size: 0.875rem; margin-bottom: 0.25rem; }
+        .form-control, .form-select { font-size: 0.875rem; padding: 0.375rem 0.75rem; }
+        .form-text { font-size: 0.75rem; }
+        .card-body { padding: 1.5rem !important; }
+        .card-header { padding: 1rem 1.5rem !important; }
+</style>
      <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="shortcut icon" href="favicon.ico">
@@ -60,56 +66,54 @@
     </section>
 
     <!-- Inventory Form -->
-    <section id="inventory-form" class="py-5">
+    <section id="inventory-form" class="py-3">
         <div class="container-lg">
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-7">
                     <div class="card shadow-lg border-0">
-                        <div class="card-header bg-primary text-white py-3">
-                            <h3 class="mb-0"><i class="bi bi-plus-circle me-2"></i>Add Inventory Item</h3>
-                            <p class="mb-0 opacity-75">Fill in the details below to add a new item to your inventory.</p>
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="bi bi-plus-circle me-2"></i>Add Inventory Item</h5>
+                            <p class="mb-0 opacity-75 small">Fill in the details below to add a new item.</p>
                         </div>
-                        <div class="card-body p-4">
+                        <div class="card-body">
                             <form id="inventoryForm" novalidate>
-                                <div class="row g-3">
+                                <div class="row g-2">
                                     <div class="col-md-6">
                                         <label for="sku" class="form-label">SKU <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="sku" name="sku" required placeholder="e.g., SKU-001" autocomplete="off">
-                                        <div class="form-text">Unique identifier for this item</div>
+                                        <input type="text" class="form-control form-control-sm" id="sku" name="sku" required placeholder="e.g., SKU-001" autocomplete="off">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="category" class="form-label">Category</label>
-                                        <input type="text" class="form-control" id="category" name="category" placeholder="e.g., Electronics" autocomplete="off">
+                                        <input type="text" class="form-control form-control-sm" id="category" name="category" placeholder="e.g., Electronics" autocomplete="off">
                                     </div>
                                 </div>
 
-                                <div class="row g-3 mt-3">
+                                <div class="row g-2 mt-2">
                                     <div class="col-12">
                                         <label for="name" class="form-label">Product Name <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="name" name="name" required placeholder="e.g., Wireless Mouse" autocomplete="off">
+                                        <input type="text" class="form-control form-control-sm" id="name" name="name" required placeholder="e.g., Wireless Mouse" autocomplete="off">
                                     </div>
                                 </div>
 
-                                <div class="row g-3 mt-3">
+                                <div class="row g-2 mt-2">
                                     <div class="col-md-4">
                                         <label for="stock" class="form-label">Current Stock <span class="text-danger">*</span></label>
-                                        <input type="number" class="form-control" id="stock" name="stock" required min="0" value="0">
+                                        <input type="number" class="form-control form-control-sm" id="stock" name="stock" required min="0" value="0">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="minLevel" class="form-label">Min Stock Level <span class="text-danger">*</span></label>
-                                        <input type="number" class="form-control" id="minLevel" name="minLevel" required min="0" value="10">
-                                        <div class="form-text">Alert when stock falls below this</div>
+                                        <input type="number" class="form-control form-control-sm" id="minLevel" name="minLevel" required min="0" value="10">
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="price" class="form-label">Unit Price ($) <span class="text-danger">*</span></label>
-                                        <input type="number" class="form-control" id="price" name="price" required min="0" step="0.01" value="0.00">
+                                        <label for="price" class="form-label">Unit Price (UGX) <span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control form-control-sm" id="price" name="price" required min="0" step="1" value="0">
                                     </div>
                                 </div>
 
-                                <div class="row g-3 mt-3">
+                                <div class="row g-2 mt-2">
                                     <div class="col-md-6">
                                         <label for="unit" class="form-label">Unit of Measure</label>
-                                        <select class="form-select" id="unit" name="unit">
+                                        <select class="form-select form-select-sm" id="unit" name="unit">
                                             <option value="pcs" selected>Pieces (pcs)</option>
                                             <option value="kg">Kilograms (kg)</option>
                                             <option value="m">Meters (m)</option>
@@ -120,18 +124,18 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="location" class="form-label">Storage Location</label>
-                                        <input type="text" class="form-control" id="location" name="location" placeholder="e.g., Warehouse A - Shelf 3" autocomplete="off">
+                                        <input type="text" class="form-control form-control-sm" id="location" name="location" placeholder="e.g., Warehouse A - Shelf 3" autocomplete="off">
                                     </div>
                                 </div>
 
-                                <div class="mt-3">
+                                <div class="mt-2">
                                     <label for="description" class="form-label">Description</label>
-                                    <textarea class="form-control" id="description" name="description" rows="3" placeholder="Optional details about this item..."></textarea>
+                                    <textarea class="form-control form-control-sm" id="description" name="description" rows="2" placeholder="Optional details..."></textarea>
                                 </div>
 
-                                <div class="d-flex gap-2 mt-4 pt-3 border-top">
-                                    <button type="submit" class="btn btn-primary btn-lg px-4">Save Item</button>
-                                    <a href="inventory.html" class="btn btn-outline-secondary btn-lg px-4">Cancel</a>
+                                <div class="d-flex gap-2 mt-3 pt-2 border-top">
+                                    <button type="submit" class="btn btn-primary btn-sm px-3">Save Item</button>
+                                    <a href="inventory.html" class="btn btn-outline-secondary btn-sm px-3">Cancel</a>
                                 </div>
                             </form>
                         </div>
