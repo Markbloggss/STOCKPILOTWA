@@ -291,11 +291,11 @@ body > footer.footer {
 .logo-show {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 8px;
   width: 100%;
   color: inherit;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 1rem;
 }
 
 .socials a {
