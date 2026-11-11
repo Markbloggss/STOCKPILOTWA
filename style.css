@@ -75,6 +75,8 @@ body > footer.footer {
 .footer {
   position: static;
   width: 100%;
+  max-width: 100%;
+  align-self: stretch;
   height: auto;
   margin-top: auto;
   flex-shrink: 0;
@@ -135,6 +137,8 @@ body > footer.footer {
 }
 
 .navbar-translucent {
+  width: 100%;
+  align-self: stretch;
   background: var(--nav-bg) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
