@@ -23,6 +23,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px ;
+  margin-top: auto; 
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
