@@ -15,7 +15,7 @@
   font-style: italic;
   font-weight: 500;
   color: aliceblue;
-  position: fixed;
+  position: static;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -30,7 +30,7 @@
 
 .footer::before {
     content: '';
-    position: fixed;
+    position: static;
     top: 0;
     left: 0;
     width: 100%;
@@ -40,7 +40,7 @@
 }
 
 .footer > * {
-    position: fixed;
+    position: static;
     z-index: 1;
 }
 
