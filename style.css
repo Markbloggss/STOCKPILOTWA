@@ -77,7 +77,7 @@ body > footer.footer {
   font-style: italic;
   font-weight: 500;
   color: aliceblue;
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   width: 100vw;
@@ -142,7 +142,7 @@ body > footer.footer {
 }
 
 .footer > * {
-    position: absolute;
+    position: relative;
     z-index: 1;
 }
 
