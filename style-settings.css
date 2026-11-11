@@ -50,9 +50,7 @@
 
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: var(--bg-color);
     margin: 0;
-    padding: 24px;
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
