@@ -1,0 +1,45 @@
+{
+  "settings": {
+    "title": "Paramètres",
+    "subtitle": "Gérez les paramètres de votre compte ci-dessous.",
+    "account": {
+      "title": "Paramètres du Compte Stock Pilot",
+      "username": "Nom d'utilisateur",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "usernamePlaceholder": "Entrez le nom d'utilisateur",
+      "emailPlaceholder": "Entrez l'e-mail",
+      "passwordPlaceholder": "Entrez le mot de passe"
+    },
+    "preferences": {
+      "title": "Préférences",
+      "language": "Langue",
+      "notifications": "Activer les notifications",
+      "theme": "Thème",
+      "darkMode": "Mode sombre"
+    },
+    "privacy": {
+      "title": "Confidentialité",
+      "changePassword": "Changer le Mot de Passe",
+      "deleteAccount": "Supprimer le Compte",
+      "deleteConfirm": "Êtes-vous sûr ?"
+    },
+    "security": {
+      "title": "Sécurité",
+      "twoFactor": "Authentification à Deux Facteurs",
+      "activeSessions": "Sessions Actives"
+    },
+    "buttons": {
+      "save": "Enregistrer les Modifications",
+      "cancel": "Annuler"
+    },
+    "alerts": {
+      "saved": "Paramètres enregistrés avec succès !"
+    }
+  },
+  "nav": {
+    "home": "Accueil",
+    "inventory": "Inventaire",
+    "sales": "Ventes"
+  }
+}

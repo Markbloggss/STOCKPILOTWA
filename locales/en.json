@@ -1,0 +1,45 @@
+{
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Manage your account settings below.",
+    "account": {
+      "title": "Stock Pilot Account Settings",
+      "username": "Username",
+      "email": "Email",
+      "password": "Password",
+      "usernamePlaceholder": "Enter username",
+      "emailPlaceholder": "Enter email",
+      "passwordPlaceholder": "Enter password"
+    },
+    "preferences": {
+      "title": "Preferences",
+      "language": "Language",
+      "notifications": "Enable notifications",
+      "theme": "Theme",
+      "darkMode": "Dark mode"
+    },
+    "privacy": {
+      "title": "Privacy",
+      "changePassword": "Change Password",
+      "deleteAccount": "Delete Account",
+      "deleteConfirm": "Are you sure?"
+    },
+    "security": {
+      "title": "Security",
+      "twoFactor": "Two-Factor Authentication",
+      "activeSessions": "Active Sessions"
+    },
+    "buttons": {
+      "save": "Save Changes",
+      "cancel": "Cancel"
+    },
+    "alerts": {
+      "saved": "Settings saved successfully!"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "inventory": "Inventory",
+    "sales": "Sales"
+  }
+}

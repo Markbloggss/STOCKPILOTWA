@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="shortcut icon" href="favicon.ico">
@@ -31,17 +32,19 @@
 
     <!-- Navigation Bar -->
    <nav class="navbar navbar-translucent md:navbar-expand" data-bs-theme="dark">
-    <nav class="logo-show"><img src="favicon.ico" class="logo-img" alt="Logo">  <b>STOCK PILOT</b></nav>
+    <nav class="logo-show"><img src="favicon.ico" class="logo-img" alt="Logo">  <b>STOCK PILOT | Settings</b></nav>
   <div class="container-fluid px-0 justify-content-center">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="homepage.html">Home</a>
+        <a class="nav-link" href="homepage.html" aria-label="Home" title="Home"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+  <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+</svg></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="inventory.html">Inventory</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="sales.html">Sales</a>
+      <li class="nav-item"> 
+        <a class="nav-link" href="about us.html" aria-label="About Us" title="About Us"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+</svg></a>
       </li>
     </ul>
   </div>
@@ -61,10 +64,6 @@
                 <label for="email" class="form-label">Email:</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password:</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" minlength="8">
-            </div>
 
             <h2>Preferences</h2>
             <div class="mb-3">
@@ -80,31 +79,22 @@
                 <input class="form-check-input" type="checkbox" id="notifications" name="notifications">
                 <label class="form-check-label" for="notifications">Enable notifications</label>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Theme:</label>
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
-                    <label class="form-check-label" for="theme-toggle">Dark mode</label>
-                </div>
-            </div>
 
             <h2>Privacy</h2>
+            <div class="mb-3">
+                <label for="current-password" class="form-label">Current Password <span class="text-danger">*</span></label>
+                <input type="password" class="form-control" id="current-password" name="current_password" placeholder="Enter current password">
+                <div class="form-text">Required to change password or delete account</div>
+            </div>
             <div class="d-flex gap-2 justify-content-center mb-3">
-                <button type="button" class="btn btn-primary" onclick="location.href='#'">Change Password</button>
-                <button type="button" class="btn btn-danger" onclick="if(confirm('Are you sure?')){ location.href='#' }">Delete Account</button>
+                <button type="button" class="btn btn-primary" disabled>Change Password <span class="badge bg-secondary ms-1">Soon</span></button>
+                <button type="button" class="btn btn-danger" disabled>Delete Account <span class="badge bg-secondary ms-1">Soon</span></button>
             </div>
 
             <h2>Security</h2>
             <div class="d-flex gap-2 justify-content-center mb-3">
-                <button type="button" class="btn btn-primary" onclick="location.href='#'">Two-Factor Authentication</button>
-                <button type="button" class="btn btn-primary" onclick="location.href='#'">Active Sessions</button>
-            </div>
-
-            <h2>About</h2>
-            <div class="text-center mb-3">
-                <p><strong>StockPilot</strong> v1.0.0</p>
-                <p class="text-muted">Manage your inventory and stock with ease.</p>
-                <button type="button" class="btn btn-primary" onclick="location.href='#'">Check for Updates</button>
+                <button type="button" class="btn btn-outline-primary" disabled>Two-Factor Auth <span class="badge bg-secondary ms-1">Soon</span></button>
+                <button type="button" class="btn btn-outline-primary" disabled>Active Sessions <span class="badge bg-secondary ms-1">Soon</span></button>
             </div>
 
             <div class="d-flex gap-2 justify-content-end">
@@ -113,8 +103,6 @@
             </div>
         </form>
     </div>
-
-    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
 
 <footer class="footer">
 <div class="logo" >
@@ -144,7 +132,7 @@
                 <i class="fa-brands fa-linkedin-in"></i></a>
               <a href="https://www.youtube.com/" alt="YouTube">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
-  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l-.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
 </svg>
                 <i class="fa-brands fa-youtube"></i></a>
             </div>
@@ -176,55 +164,14 @@
         <input type="submit" value="Sign up" id="footer-email-btn">
       </form>
     </div>
-  </footer>
-
-  <div id="info-modal" class="info-modal">
+    <div id="info-modal" class="info-modal">
     <div class="info-modal-content">
       <span class="info-modal-close">&times;</span>
       <p id="info-modal-text"></p>
     </div>
   </div>
+  </footer>
 
-    <script>
-        const toggle = document.getElementById('theme-toggle');
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        if (toggle) {
-            toggle.checked = savedTheme === 'dark';
-        }
-
-        if (toggle) {
-            toggle.addEventListener('change', () => {
-                const theme = toggle.checked ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
-            });
-        }
-
-        const accountForm = document.getElementById('account-form');
-        if (accountForm) {
-            const savedUser = localStorage.getItem('sp_username');
-            const savedEmail = localStorage.getItem('sp_email');
-            const savedLang = localStorage.getItem('sp_language');
-            const savedNotif = localStorage.getItem('sp_notifications');
-            if (savedUser) document.getElementById('username').value = savedUser;
-            if (savedEmail) document.getElementById('email').value = savedEmail;
-            if (savedLang) document.getElementById('language').value = savedLang;
-            if (savedNotif === 'true') document.getElementById('notifications').checked = true;
-
-            accountForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                localStorage.setItem('sp_username', document.getElementById('username').value);
-                localStorage.setItem('sp_email', document.getElementById('email').value);
-                localStorage.setItem('sp_language', document.getElementById('language').value);
-                localStorage.setItem('sp_notifications', document.getElementById('notifications').checked);
-                const pw = document.getElementById('password').value;
-                if (pw) {
-                    localStorage.setItem('sp_password_set', 'true');
-                }
-                alert('Settings saved successfully!');
-            });
-        }
-    </script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
 </body>
 </html>
