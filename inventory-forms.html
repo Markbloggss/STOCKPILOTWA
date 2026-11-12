@@ -94,7 +94,19 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="category" class="form-label">Category</label>
-                                        <input type="text" class="form-control form-control-sm" id="category" name="category" placeholder="e.g., Electronics" autocomplete="off">
+                                        <select class="form-select form-select-sm" id="category" name="category">
+                                            <option value="" disabled selected>Select a category</option>
+                                            <option value="Electronics">Electronics</option>
+                                            <option value="Clothing">Clothing</option>
+                                            <option value="Food & Beverages">Food & Beverages</option>
+                                            <option value="Home & Garden">Home & Garden</option>
+                                            <option value="Sports & Outdoors">Sports & Outdoors</option>
+                                            <option value="Books & Media">Books & Media</option>
+                                            <option value="Health & Beauty">Health & Beauty</option>
+                                            <option value="Automotive">Automotive</option>
+                                            <option value="Office Supplies">Office Supplies</option>
+                                            <option value="Other">Other</option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -126,15 +138,21 @@
                                         <select class="form-select form-select-sm" id="unit" name="unit">
                                             <option value="pcs" selected>Pieces (pcs)</option>
                                             <option value="kg">Kilograms (kg)</option>
+                                            <option value="g">Grams (g)</option>
                                             <option value="m">Meters (m)</option>
+                                            <option value="cm">Centimeters (cm)</option>
                                             <option value="ltr">Liters (ltr)</option>
+                                            <option value="ml">Milliliters (ml)</option>
                                             <option value="box">Box</option>
                                             <option value="pack">Pack</option>
+                                            <option value="carton">Carton</option>
+                                            <option value="bundle">Bundle</option>
+                                            <option value="ream">Ream</option>
+                                            <option value="jar">Jar</option>
+                                            <option value="bottle">Bottle</option>
+                                            <option value="can">Can</option>
+                                            <option value="set">Set</option>
                                         </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="location" class="form-label">Storage Location</label>
-                                        <input type="text" class="form-control form-control-sm" id="location" name="location" placeholder="e.g., Warehouse A - Shelf 3" autocomplete="off">
                                     </div>
                                 </div>
 
