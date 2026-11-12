@@ -401,15 +401,13 @@ password.focus();
 return;
 }
 
-// This is a front-end demonstration only.
-// A real website must send details securely to a server.
-if (currentMode === "create") {
-message.textContent =
-"Demo complete: the form is valid. Connect a secure backend to create an account.";
-} else {
-message.textContent =
-"Demo complete: the form is valid. Connect an authentication service to sign in.";
-}
+    // This is a front-end demonstration only.
+    // A real website must send details securely to a server.
+    if (currentMode === "create") {
+      window.location.href = "index.html";
+    } else {
+      window.location.href = "index.html";
+    }
 
 console.log("Form mode:", currentMode);
 console.log("Email entered:", email);
