@@ -155,6 +155,28 @@
         </div>
     </section>
 
+    <script>
+        document.getElementById('inventoryForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const item = {
+                sku: document.getElementById('sku').value,
+                category: document.getElementById('category').value,
+                name: document.getElementById('name').value,
+                stock: document.getElementById('stock').value,
+                minLevel: document.getElementById('minLevel').value,
+                price: document.getElementById('price').value,
+                unit: document.getElementById('unit').value,
+                location: document.getElementById('location').value,
+                description: document.getElementById('description').value
+            };
+            let items = JSON.parse(localStorage.getItem('stockpilot_inventory') || '[]');
+            items.push(item);
+            localStorage.setItem('stockpilot_inventory', JSON.stringify(items));
+            alert('Item saved successfully!');
+            window.location.href = 'inventory.html';
+        });
+    </script>
+
 
 
 

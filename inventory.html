@@ -77,7 +77,10 @@
         <div class="container-lg">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="mb-0">Saved Items</h4>
-                <a href="inventory-forms.html" class="btn btn-sm btn-outline-primary"><i class="bi bi-plus me-1"></i>Add Item</a>
+                <div>
+                    <a href="inventory-forms.html" class="btn btn-sm btn-outline-primary"><i class="bi bi-plus me-1"></i>Add Item</a>
+                    <a href="sales.html" class="btn btn-sm btn-outline-secondary ms-2">View Sales</a>
+                </div>
             </div>
             <div class="card shadow-sm border-0">
                 <div class="card-body p-0">
@@ -92,14 +95,7 @@
                                     <th class="text-end">Price (UGX)</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="5" class="text-center py-5 text-muted">
-                                        <i class="bi bi-info-circle me-2"></i>
-                                        No items saved yet. 
-                                        <a href="inventory-forms.html" class="text-decoration-none">Add your first item</a> to get started.
-                                    </td>
-                                </tr>
+                            <tbody id="inventory-table-body">
                             </tbody>
                         </table>
                     </div>
@@ -107,6 +103,37 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function renderInventoryTable() {
+            const items = JSON.parse(localStorage.getItem('stockpilot_inventory') || '[]');
+            const tbody = document.getElementById('inventory-table-body');
+            tbody.innerHTML = '';
+            if (items.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="text-center py-5 text-muted">
+                            <i class="bi bi-info-circle me-2"></i>
+                            No items saved yet.
+                            <a href="inventory-forms.html" class="text-decoration-none">Add your first item</a> to get started.
+                        </td>
+                    </tr>`;
+                return;
+            }
+            items.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${item.sku}</td>
+                    <td>${item.name}</td>
+                    <td>${item.category}</td>
+                    <td class="text-center">${item.stock}</td>
+                    <td class="text-end">${item.price}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+        renderInventoryTable();
+    </script>
 
 
 <footer class="footer">
