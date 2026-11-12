@@ -314,6 +314,7 @@ Create account ’
 </section>
 </main>
 
+<script src="auth.js"></script>
 <script>
 // 1. GET THE HTML ELEMENTS THAT JAVASCRIPT WILL CONTROL.
 const signInTab = document.getElementById("signInTab");
@@ -381,39 +382,50 @@ togglePassword.setAttribute("aria-label", "Show password");
 });
 
 // 5. HANDLE FORM SUBMISSION.
-accountForm.addEventListener("submit", function (event) {
-// Stop the browser from refreshing the page.
-event.preventDefault();
+accountForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+    message.textContent = "";
+    message.style.color = "#d8a2ff";
 
-const email = document.getElementById("email").value.trim();
-const passwordValue = password.value;
-const name = fullName.value.trim();
+    const email = document.getElementById("email").value.trim();
+    const passwordValue = password.value;
+    const name = fullName.value.trim();
 
-if (currentMode === "create" && name.length < 2) {
-message.textContent = "Please enter your full name.";
-fullName.focus();
-return;
-}
-
-if (passwordValue.length < 4) {
-message.textContent = "Your password must have at least 8 characters.";
-password.focus();
-return;
-}
-
-    // This is a front-end demonstration only.
-    // A real website must send details securely to a server.
-    if (currentMode === "create") {
-      window.location.href = "index.html";
-    } else {
-      window.location.href = "index.html";
+    if (currentMode === "create" && name.length < 2) {
+        message.textContent = "Please enter your full name.";
+        fullName.focus();
+        return;
     }
 
-console.log("Form mode:", currentMode);
-console.log("Email entered:", email);
+    if (passwordValue.length < 4) {
+        message.textContent = "Your password must have at least 4 characters.";
+        password.focus();
+        return;
+    }
 
-
-// Do not print or store the password in the console.
+    if (currentMode === "create") {
+        const result = await registerUser(email, passwordValue, name);
+        if (!result.ok) {
+            message.textContent = result.error;
+            message.style.color = "#ff6b6b";
+            return;
+        }
+        message.textContent = "Account created successfully. Signing you in...";
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 800);
+    } else {
+        const result = await loginUser(email, passwordValue);
+        if (!result.ok) {
+            message.textContent = result.error;
+            message.style.color = "#ff6b6b";
+            return;
+        }
+        message.textContent = "Welcome back, " + result.user.name + ".";
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 800);
+    }
 });
 
 
